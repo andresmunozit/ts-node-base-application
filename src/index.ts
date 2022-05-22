@@ -1,1 +1,1 @@
-console.log('Application has started!');
+console.log('Application was executed...');

@@ -1,13 +1,11 @@
 # TypeScript Node Base Application
 This is a template to create TypeScript Node applications. The following template includes:
 - `package.json` file minimally configured
-- An easy start script in dev mode using `nodemon`
-- `concurrently` npm package allows us to execute concurrent npm scripts independent from the OS
-that we are working on
-- Linting preconfigured
+- An easy start script in dev mode using [ts-node-dev](https://www.npmjs.com/package/ts-node-dev)
 - Node type definition files pre installed
-- `git` minimally configured through a `.gitignore` file
+- `.gitignore` file
 - TypeScript minimally configured through `tsconfig.json`
+- Linting preconfigured - TODO
 
 ## Prerequisites
 Node and NPM must be installed in your system before using this template. The recommended way to
@@ -32,15 +30,12 @@ $ npm install
 
 # Run the start script (the first time is going to crash, exit using Control + C and run it again)
 $ npm start
-11:33:25 - Starting compilation in watch mode...
-[start:build]
-[start:run] [nodemon] 2.0.13
-[start:run] [nodemon] to restart at any time, enter `rs`
-[start:run] [nodemon] watching path(s): *.*
-[start:run] [nodemon] watching extensions: js,mjs,json  
-[start:run] [nodemon] starting `node build/index.js`    
-[start:run] Application has started!
-[start:run] [nodemon] clean exit - waiting for changes before restart
+
+> ts-node-base-application@1.0.0 start
+> ts-node-dev --respawn src/index.ts
+
+[INFO] 14:26:13 ts-node-dev ver. 1.1.8 (using ts-node ver. 9.1.1, typescript ver. 4.6.4)
+Application was executed...
 
 # Start editing the src/index.ts file :)
 
@@ -56,11 +51,7 @@ $ npm init -y
 ```
 
 #### Scripts
-- `"start:build": "tsc -w"` - Compiles all the TypeScript files in `/src/*` to JavaScript in
-`/build/*` and stay in watch mode (recompiles if any change takes place inside of `/src/*`) 
-- `"start:run": "nodemon build/index.js"` - Starts the JavaScript compiled application using
-nodemon, any change on `/build/*` will restart the application
-- `"start": "concurrently npm:start:*"` - Runs `start:build` and then `start:run`
+- TODO
 
 ### .tsconfig.json file
 #### Creation
@@ -95,19 +86,5 @@ They are necessary to use Node APIs (like `crypto` or `fs`) in your TypeScript c
 installed like this:
 ```sh
 $ npm install -D @types/node
-
-```
-
-### Concurrently
-`concurrently` has been installed like this:
-```sh
-$ npm install -D concurrently
-
-```
-
-### Nodemon
-`nodemon` was installed like this:
-```sh
-$ npm install -D nodemon
 
 ```
