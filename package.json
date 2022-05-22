@@ -1,19 +1,15 @@
 {
   "name": "ts-node-base-application",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "This is a template to create TypeScript Node applications.",
   "main": "index.js",
   "scripts": {
-    "start:build": "tsc -w",
-    "start:run": "nodemon build/index.js",
-    "start": "concurrently npm:start:*"
+    "dev": "ts-node-dev --respawn src/index.ts"
   },
   "keywords": [],
-  "author": "",
+  "author": "Andres Munoz | am@andresmunozit.com",
   "license": "ISC",
   "devDependencies": {
-    "@types/node": "^16.10.1",
-    "concurrently": "^6.2.2",
-    "nodemon": "^2.0.13"
+    "ts-node-dev": "^1.1.8"
   }
 }
